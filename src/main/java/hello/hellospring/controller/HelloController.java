@@ -13,13 +13,4 @@ public class HelloController {
         model.addAttribute("date", "hello!!");
         return "hello";
     }
-
-    @GetMapping("modelandview")
-    public ModelAndView hello(HttpServletRequest req, HttpServletResponse res) {
-
-        return new ModelAndView("index.html");
-    }
-
-
-
 }

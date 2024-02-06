@@ -3,7 +3,7 @@ package hello.hellospring;
 public class Exercise2 {
 
     //Programmers 10진수 N진수 변화
-    public int solution(int n) {
+    public int solutionDecimalNumber(int n) {
         int answer;
         //10진법 -> 2진법
         String decimalNumber2 = Integer.toString(n, 2);
@@ -30,6 +30,29 @@ public class Exercise2 {
 
         answer = Integer.parseInt(decimalToBinary2);
         return answer;
+    }
+
+    public int solutionNumberDecimal(String n) {
+        //2진법 -> 10진법
+        int NumberDecimal2 = Integer.parseInt(n, 2);
+        //3진법 -> 10진법
+        int NumberDecimal3 = Integer.parseInt(n, 3);
+        //4진법 -> 10진법
+        int NumberDecimal4 = Integer.parseInt(n, 4);
+        //5진법 -> 10진법
+        int NumberDecimal5 = Integer.parseInt(n, 5);
+        //6진법 -> 10진법
+        int NumberDecimal6 = Integer.parseInt(n, 6);
+        //7진법 -> 10진법
+        int NumberDecimal7 = Integer.parseInt(n, 7);
+        //8진법 -> 10진법
+        int NumberDecimal8 = Integer.parseInt(n, 8);
+        //9진법 -> 10진법
+        int NumberDecimal9 = Integer.parseInt(n, 9);
+        //16진법 -> 10진법
+        int NumberDecimal16 = Integer.parseInt(n, 16);
+
+        return NumberDecimal16;
     }
 
 }

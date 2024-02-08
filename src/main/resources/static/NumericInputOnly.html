@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html lang="kr">
+<head>
+    <title>Delayed HTML Page</title>
+
+    <script type="text/javascript">
+
+        function checkNumber(event) {
+          if(event.key >= 0 && event.key <= 9 || event.key === '.'  || event.key === '-') {
+            return true;
+          }
+          return false;
+        }
+
+        function removeNonNumericCharacters(input) {
+            input.value = input.value.replace(/\D/g, '');
+        }
+
+    </script>
+
+</head>
+<body>
+<form>
+    <label> Type='Number' <input type='number'> </label><br/>
+    <label> onKeyPress <input onkeypress='return checkNumber(event)' type='text'> </label><br/>
+    <label> Replace <input id="numberInput" oninput="removeNonNumericCharacters(this)" type="text">
+    </label><br/>
+    <label> Pattern<input pattern="\d*" type="text"></label><br/>
+    <input type='submit'>
+</form>
+</body>
+</html>

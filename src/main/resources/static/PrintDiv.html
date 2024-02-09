@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript">
+        function printWindow() {
+        $('#headerWrap').hide();
+        $('.big-title').hide();
+        $(".tabcontents").css('border', '0px');
+        $("#container").css('width', 'auto');
+        $('link[rel=stylesheet][href~="href주소입력"]').remove();
+        setTimeout(function () {
+        window.focus();
+        window.print();
+        $('#headerWrap').show();
+        $('.big-title').show();
+        $(".tabcontents").css('border', '1px solid #ccc');
+        $("#container").css('width', '980px');
+
+        var link1 = document.createElement('link');
+        link1.rel = 'stylesheet';
+        link1.href = 'href주소 입력';
+        document.head.appendChild(link1);
+        }, 500);
+        }
+    </script>
+
+</head>
+<body>
+    <div>
+        <button onclick="printWindow()">Print</button>
+    </div>
+</body>
+
+</html>

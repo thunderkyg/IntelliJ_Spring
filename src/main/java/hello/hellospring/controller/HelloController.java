@@ -1,9 +1,13 @@
 package hello.hellospring.controller;
 
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.servlet.ModelAndView;
+
+import java.io.IOException;
 
 @Controller
 public class HelloController {
@@ -11,6 +15,25 @@ public class HelloController {
     @GetMapping("hello")
     public String hello(Model model) {
         model.addAttribute("date", "hello!!");
+        String apiRes = callApi("https://www.google.com");
+        System.out.println(apiRes);
         return "hello";
+    }
+
+    public String callApi(String url) {
+
+        String rtnStr = "";
+        System.out.println("Url Check: " + url);
+
+        try {
+            Document doc = Jsoup.connect(url).timeout(10 * 1000).post();
+            Element body = doc.body();
+            rtnStr = body.text();
+
+        } catch (IOException e1) {
+            System.out.println("Error Occurance" + e1.getMessage());
+        }
+
+        return rtnStr;
     }
 }

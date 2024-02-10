@@ -1,4 +1,4 @@
-package hello.hellospring;
+package excercise;
 
 public class Exercise2 {
 

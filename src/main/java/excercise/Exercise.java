@@ -1,4 +1,4 @@
-package hello.hellospring;
+package excercise;
 
 public class Exercise {
 
@@ -9,8 +9,8 @@ public class Exercise {
         String number = String.valueOf(n);
         char[] numberString = number.toCharArray();
 
-        for (int i = 0; i < numberString.length; i++) {
-            tempNo = Character.getNumericValue(numberString[i]);
+        for (char c : numberString) {
+            tempNo = Character.getNumericValue(c);
             answer = answer + tempNo;
         }
         return answer;
@@ -48,11 +48,11 @@ public class Exercise {
         char[] nums = number.toCharArray();
         int ans = 0;
 
-        for (int i = 0; i < nums.length; i++) {
-            if (nums[i] >= 'A') {
-                ans = ans * N + (nums[i] - 'A' + 10);
+        for (char num : nums) {
+            if (num >= 'A') {
+                ans = ans * N + (num - 'A' + 10);
             } else {
-                ans = ans * N + (nums[i] - '0');
+                ans = ans * N + (num - '0');
             }
         }
         System.out.println(ans);

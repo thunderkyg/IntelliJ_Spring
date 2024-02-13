@@ -17,6 +17,10 @@ public class HelloController {
         model.addAttribute("date", "hello!!");
         String apiRes = callApi("https://www.google.com");
         System.out.println(apiRes);
+
+        String nullRes = null;
+        System.out.println(isNull(nullRes));
+
         return "hello";
     }
 
@@ -35,5 +39,13 @@ public class HelloController {
         }
 
         return rtnStr;
+    }
+
+    public String isNull(String str)
+    {
+        if ( str == null || str.equals("null") || str.equals("") )
+            return "";
+        else
+            return str;
     }
 }

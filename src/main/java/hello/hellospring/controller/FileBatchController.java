@@ -23,7 +23,6 @@ public class FileBatchController {
 
             // CI 변환
             String ciTxt = "";
-            String juminCi = "";
             for(int i = 1; i <=	 2000; i++){
                 String character = i + "11111111111111";
                 character = character.substring(0, 13);
@@ -33,7 +32,6 @@ public class FileBatchController {
             op.write(by);
             op.close();
             System.out.println("done");
-            ciFlag = true;
         } catch (Exception e) {
             System.out.println("TEST FAIL");
         }

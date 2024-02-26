@@ -42,6 +42,24 @@ public class HelloController {
         return rtnStr;
     }
 
+    @GetMapping
+    public String TestingUrl(String url) {
+
+        String rtnStr = "";
+        System.out.println("Url Check: " + url);
+
+        try {
+            Document doc = Jsoup.connect(url).timeout(10 * 1000).post();
+            Element body = doc.body();
+            rtnStr = body.text();
+
+        } catch (IOException e1) {
+            System.out.println("Error Occurance" + e1.getMessage());
+        }
+
+        return rtnStr;
+    }
+
     public String isNull(String str)
     {
         if ( str == null || str.equals("null") || str.equals("") )

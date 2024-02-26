@@ -36,7 +36,7 @@ public class HelloController {
             rtnStr = body.text();
 
         } catch (IOException e1) {
-            System.out.println("Error Occurance" + e1.getMessage());
+
         }
 
         return rtnStr;

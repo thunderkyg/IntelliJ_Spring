@@ -63,7 +63,7 @@ public class HelloController {
 
     public String isNull(String str)
     {
-        if ( str == null || str.equals("null") || str.equals("") )
+        if ( str == null || str.equals("null") || str.isEmpty())
             return "";
         else
             return str;

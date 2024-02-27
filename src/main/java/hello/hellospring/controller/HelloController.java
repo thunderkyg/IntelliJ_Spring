@@ -13,6 +13,7 @@ import java.io.IOException;
 public class HelloController {
 
     //PUSH/PULL TESTING Comeback
+    //FETCH, CHECKOUT, ORIGIN/MASTER TESTING COMMIT
     @GetMapping("hello")
     public String hello(Model model) {
         model.addAttribute("date", "hello!!");
@@ -36,7 +37,7 @@ public class HelloController {
             rtnStr = body.text();
 
         } catch (IOException e1) {
-
+            System.out.println("Testing S-out Tab");
         }
 
         return rtnStr;

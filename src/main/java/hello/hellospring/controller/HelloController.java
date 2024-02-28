@@ -28,23 +28,6 @@ public class HelloController {
 
     public String callApi(String url) {
 
-        String rtnStr = "";
-        System.out.println("Url Check: " + url);
-
-        try {
-            Document doc = Jsoup.connect(url).timeout(10 * 1000).post();
-            Element body = doc.body();
-            rtnStr = body.text();
-
-        } catch (IOException e1) {
-            System.out.println("Testing S-out Tab");
-        }
-
-        return rtnStr;
-    }
-
-    @GetMapping
-    public String TestingUrl(String url) {
 
         String rtnStr = "";
         System.out.println("Url Check: " + url);
@@ -55,7 +38,9 @@ public class HelloController {
             rtnStr = body.text();
 
         } catch (IOException e1) {
-            System.out.println("Error Occurance" + e1.getMessage());
+            System.out.println("Testing Exception1");
+            System.out.println("Testing Exception2");
+            System.out.println("Testing Exception3");
         }
 
         return rtnStr;

@@ -16,13 +16,9 @@ public class HelloController {
     //FETCH, CHECKOUT, ORIGIN/MASTER TESTING COMMIT
     @GetMapping("hello")
     public String hello(Model model) {
-        model.addAttribute("date", "hello!!");
-        String apiRes = callApi("https://www.google.com");
-        System.out.println(apiRes);
-
-        String nullRes = null;
-        System.out.println(isNull(nullRes));
-
+        model.addAttribute("data", "hello!!");
+//        String apiRes = callApi("https://www.google.com");
+//        String nullRes = null;
         return "hello";
     }
 

@@ -6,6 +6,8 @@ import org.jsoup.nodes.Element;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.io.IOException;
 
@@ -21,6 +23,27 @@ public class HelloController {
 //        String nullRes = null;
         return "hello";
     }
+
+    @GetMapping("hello-string")
+    @ResponseBody
+    public String helloString(@RequestParam("name") String name) {
+        return "hello " + name;
+    }
+
+    //--------------임시 VO영역-----------------
+    static class Hello {
+        private String name;
+
+        public String getName() {
+            return name;
+        }
+
+        public void setName(String name) {
+            this.name = name;
+        }
+    }
+
+    //-------------함수----------------------
 
     public String callApi(String url) {
 
